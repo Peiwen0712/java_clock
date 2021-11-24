@@ -1,0 +1,26 @@
+public class Main{
+
+  public static void main(String[] args){
+    Counter hours = new Counter(24, 0);
+    Counter mins = new Counter(60, 59);
+    Counter sec = new Counter(60, 59);
+
+int i = 0;
+while(i<10){
+  System.out.println(hours.getDisplay() + ":" + 
+                    mins.getDisplay() + ":" + 
+                    sec.getDisplay());
+    
+    sec.tick();
+    if(sec.getCount() == 0){
+      mins.tick();
+       if(mins.getCount() == 0){
+         hours.tick();
+    }
+}
+
+
+i++;
+    
+  } 
+}
