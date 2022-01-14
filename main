@@ -1,33 +1,14 @@
-public class Counter{
-  private int limit;
-  private int value;
-  
-  public Counter(int limit){
-    this.limit = limit;
-    value = 0;
-  }
-
-  public Counter(int limit, int value){
-    this.limit = limit;
-    this.value = value;
-  }
-  public int getCount(){
-    return value;
-}
-  public void tick(){
-    if(value == (limit-1)){
-      value = 0;
-    }
-    else{
-      value++;
-    }
-  }
-  public String getDisplay(){
-    if(value<10){
-      return "0" + value;
-    }
-    else{
-      return "" + value;
+class Main {
+  public static void main(String[] args) {
+    Clock clock = new Clock(0,00);
+    System.out.println(clock);
+    while(true){
+      try{
+        Thread.sleep(1000);
+        clock.tick();
+        System.out.println(clock);
+      }
+      catch(Exception e){}
     }
   }
 }
